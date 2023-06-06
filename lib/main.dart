@@ -9,7 +9,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Mi Aplicación',
+      title: 'Gatalimentadinador',
       theme: ThemeData(
         primarySwatch: Colors.blue,
         inputDecorationTheme: InputDecorationTheme(
@@ -73,7 +73,7 @@ class _MyHomePageState extends State<MyHomePage> {
     final ration = int.tryParse(racionController.text.trim());
     final interval = ((ration! * 5000)/60);
 
-    final url = Uri.parse('http://192.168.1.100/set?hour1=$hour1&hour2=$hour2&interval=$ration');
+    final url = Uri.parse('http://192.168.1.100/set?hour1=$hour1&hour2=$hour2&interval=$interval');
 
     http.get(url).then((response) {
       if (response.statusCode == 200) {
@@ -141,7 +141,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Mi Aplicación'),
+        title: Text('Gatalimentadinador 3000'),
       ),
       body: Center(
         child: Column(
@@ -149,8 +149,9 @@ class _MyHomePageState extends State<MyHomePage> {
           children: [
             Padding(
               padding: const EdgeInsets.all(16.0),
-              child: FlutterLogo(
-                size: 100,
+              child:Image.asset(
+                'Logo.png',
+                width: 150,
               ),
             ),
             Padding(
